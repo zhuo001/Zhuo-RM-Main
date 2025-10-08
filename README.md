@@ -148,7 +148,7 @@ Zhuo-RM-Main/
 
 ## 联系方式
 
-- **项目维护者**: Zhuo-Skadi
+- **项目维护者**: Zhuo
 - **GitHub**: [@zhuo001](https://github.com/zhuo001)
 
 ## 致谢
