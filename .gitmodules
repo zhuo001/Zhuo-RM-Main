@@ -2,3 +2,6 @@
 	path = Zhuo-RM-vision
 	url = https://github.com/zhuo001/Zhuo-RM-vision.git
 	branch = main
+[submodule "Zhuo-RM-decision"]
+	path = Zhuo-RM-decision
+	url = https://github.com/zhuo001/Zhuo-RM-decision.git

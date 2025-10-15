@@ -1,0 +1,124 @@
+{
+	"folders": [
+		{
+			"name": "🤖 Zhuo-RM-Main (主仓库)",
+			"path": "."
+		},
+		{
+			"name": "🎯 Zhuo-RM-decision (决策系统)",
+			"path": "./Zhuo-RM-decision"
+		},
+		{
+			"name": "👁️ Zhuo-RM-vision (视觉系统)",
+			"path": "./Zhuo-RM-vision"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/__pycache__": true,
+			"**/*.pyc": true,
+			"**/.venv": true,
+			"**/venv": true,
+			"**/.git": false
+		},
+		"python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
+		"terminal.integrated.cwd": "${workspaceFolder}",
+		"editor.formatOnSave": true,
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": false,
+		"python.linting.flake8Enabled": true,
+		"git.enableSmartCommit": true,
+		"git.confirmSync": false,
+		"git.autofetch": true
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-python.python",
+			"ms-python.vscode-pylance",
+			"ms-toolsai.jupyter",
+			"eamodio.gitlens",
+			"ms-vscode.cpptools"
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "🎯 Decision System (决策系统)",
+				"type": "python",
+				"request": "launch",
+				"program": "${workspaceFolder:🎯 Zhuo-RM-decision (决策系统)}/main_decision.py",
+				"console": "integratedTerminal",
+				"cwd": "${workspaceFolder:🎯 Zhuo-RM-decision (决策系统)}",
+				"env": {
+					"PYTHONPATH": "${workspaceFolder:🎯 Zhuo-RM-decision (决策系统)}/src"
+				}
+			},
+			{
+				"name": "🧪 Test Camera (测试相机)",
+				"type": "python",
+				"request": "launch",
+				"program": "${workspaceFolder:🎯 Zhuo-RM-decision (决策系统)}/test_camera.py",
+				"console": "integratedTerminal",
+				"args": ["--mode", "basic"]
+			},
+			{
+				"name": "🧪 Test SLAM (测试SLAM)",
+				"type": "python",
+				"request": "launch",
+				"program": "${workspaceFolder:🎯 Zhuo-RM-decision (决策系统)}/test_slam.py",
+				"console": "integratedTerminal",
+				"args": ["--mode", "sim"]
+			}
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "🔨 编译 Berxel 扩展",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"setup.py",
+					"build_ext",
+					"--inplace"
+				],
+				"options": {
+					"cwd": "${workspaceFolder:🎯 Zhuo-RM-decision (决策系统)}"
+				},
+				"problemMatcher": [],
+				"group": {
+					"kind": "build",
+					"isDefault": true
+				}
+			},
+			{
+				"label": "📦 安装依赖",
+				"type": "shell",
+				"command": "pip",
+				"args": [
+					"install",
+					"-r",
+					"requirements.txt"
+				],
+				"options": {
+					"cwd": "${workspaceFolder:🎯 Zhuo-RM-decision (决策系统)}"
+				},
+				"problemMatcher": []
+			},
+			{
+				"label": "🚀 运行决策系统",
+				"type": "shell",
+				"command": "python",
+				"args": [
+					"main_decision.py"
+				],
+				"options": {
+					"cwd": "${workspaceFolder:🎯 Zhuo-RM-decision (决策系统)}"
+				},
+				"problemMatcher": []
+			}
+		]
+	}
+}
