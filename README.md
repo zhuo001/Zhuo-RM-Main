@@ -17,23 +17,26 @@
 | 子项目 | 描述 | 仓库链接 | 状态 |
 |--------|------|----------|------|
 | **Zhuo-RM-vision** | 视觉检测系统 | [🔗 Zhuo-RM-vision](https://github.com/zhuo001/Zhuo-RM-vision) | ✅ 开发中 |
+| **Zhuo-RM-decision** | 决策系统（SLAM避障） | [� Zhuo-RM-decision](https://github.com/zhuo001/Zhuo-RM-decision) | ✅ 开发中 |
 | **Zhuo-RM-control** | 运动控制系统 | 🔜 即将推出 | ⏳ 规划中 |
-| **Zhuo-RM-decision** | 决策系统 | 🔜 即将推出 | ⏳ 规划中 |
 | **Zhuo-RM-hardware** | 硬件设计 | 🔜 即将推出 | ⏳ 规划中 |
 
 ## 功能特性
 
 ### 已实现功能 ✅
-- [x] 3D 相机集成（Berxel 相机）
+- [x] 3D 相机集成（Berxel P100R）
 - [x] 人形目标检测（YOLOv8）
 - [x] 深度信息获取与距离估计
 - [x] 实时图像处理
+- [x] 深度SLAM障碍物检测
+- [x] 实时导航区域识别
+- [x] 自主避障决策系统
 
 ### 开发中功能 🚧
 - [ ] 自动瞄准系统
 - [ ] 云台控制
 - [ ] 底盘移动控制
-- [ ] 自主导航
+- [ ] 高级路径规划（A*、DWA）
 - [ ] 人形目标识别与多目标跟踪（持续优化）
 
 ### 规划中功能 📋
@@ -71,11 +74,16 @@ git clone https://github.com/zhuo001/Zhuo-RM-Main.git
 cd Zhuo-RM-Main
 ```
 
-2. **克隆视觉子项目**
+2. **克隆子项目（推荐使用子模块方式）**
 
 ```bash
-# 视觉系统
+# 使用 Git 子模块自动克隆所有子项目
+git clone --recurse-submodules https://github.com/zhuo001/Zhuo-RM-Main.git
+cd Zhuo-RM-Main
+
+# 或者手动克隆各个子项目
 git clone https://github.com/zhuo001/Zhuo-RM-vision.git
+git clone https://github.com/zhuo001/Zhuo-RM-decision.git
 ```
 
 3. **准备视觉模块**
